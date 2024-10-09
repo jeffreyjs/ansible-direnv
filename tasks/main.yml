@@ -1,0 +1,13 @@
+---
+- name: Install direnv package
+  ansible.builtin.package:
+    name: direnv
+    state: present
+
+- name: Install direnv hook
+  become: true
+  become_user: "{{ direnv_user }}"
+  ansible.builtin.lineinfile:
+    state: present
+    dest: ~/.bashrc
+    line: 'eval "$(direnv hook bash)"'

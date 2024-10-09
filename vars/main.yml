@@ -1,0 +1,3 @@
+---
+
+direnv_user: "{{ lookup('ansible.builtin.env', 'USR') }}"

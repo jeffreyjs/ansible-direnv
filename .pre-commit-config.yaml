@@ -45,4 +45,3 @@ repos:
     rev: v1.31.0
     hooks:
       - id: yamllint
-  

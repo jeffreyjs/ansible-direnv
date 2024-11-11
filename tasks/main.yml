@@ -1,12 +1,12 @@
 ---
 - name: Install direnv package
+  become: true
+  become_method: ansible.builtin.sudo
   ansible.builtin.package:
     name: direnv
     state: present
 
 - name: Install direnv hook
-  become: true
-  become_user: "{{ direnv_user }}"
   ansible.builtin.lineinfile:
     state: present
     dest: ~/.bashrc
